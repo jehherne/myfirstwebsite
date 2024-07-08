@@ -1,0 +1,58 @@
+body{
+    background: linear-gradient(to bottom,#EFB924,#BBF912);
+}
+h1{
+    color:black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 230%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+span{
+    color:yellow
+}
+h4{
+    color:#5A7316;
+    font-family:sans-serif;
+}
+#header{
+    color:black;
+}
+#contact{
+    text-align: center;
+}
+#bold{
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline;
+}
+.achievementdesc{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display:inline-block
+}
+.intro{
+    display: grid;
+    grid-template-columns: 80%;
+    grid-template-rows: 10% 15% 12%;
+    justify-content: center;
+}
+.links:hover{
+    color:black;
+    background-color: green;
+}
+.links:visited{
+    color:purple;
+    border:2px;
+}
+dl{
+    list-style-type: upper-alpha;
+}
+nav .links{
+    width:10%;
+    border: 0.3px solid #5A7316;
+}
+ol{
+    display:flex;
+    justify-content:space-between;
+}
+
