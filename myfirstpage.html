@@ -6,12 +6,24 @@
     <title>My First Page</title>
     <link rel="icon" type="image/jpg" href="logopic.jpg">
     <link rel="stylesheet" href="myfirstpage_style.css">
-
+    <link rel="stylesheet" href="dist/lightbox.css">
+    <script src="myfirstpage_js.js"></script>
+    <script src="dist/lightbox-plus-jquery.js"></script>
 </head>
-<body>
+
+<body  onload="randomquotes()">
+    <div class="start" id="start">
+        <img tabindex=0 src="logopic.jpg" onclick="reload()">
+        <h1 style="position: relative;top:15px">Jeh Herne's First Website</h1>
+        <a href="#studies">Studies</a>
+        <a href="#education">Education</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+        <p id="quote"></p>
+    </div>
     <div class="intro">
-        <h2 id="header">About Me</h2>
-        <h1>I am <span class="autotype">Yeoh Jeh Herne</span></h1>
+        <h1 id="header" onclick="message('Hi!')">About Me</h1>
+        <h2>I am <span class="autotype">Yeoh Jeh Herne</span></h2>
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
         <script>
         var typed=new Typed(".autotype",{
@@ -22,13 +34,18 @@
         })</script>
         <figure>
             <a href = "graduatepic.jpg" target="_blank">
-            <img src="graduatepic.jpg" alt="My Picture" style="float:right;width:10%;margin-top:-10%;"></a>
-            <figcaption style="text-align:center;float:right;clear:both;">Graduation Picture</figcaption> 
+            <img src="graduatepic.jpg" alt="My Picture" style="float:right;width:10%;margin-top:-12%;"></a>
+            <figcaption style="text-align:center;float:right;clear:both;padding-bottom: 2px;">Graduation Picture</figcaption> 
         </figure>
-        <p>
+        <button onclick="introreveal()" id="introduction" class="introduction" style="position: relative;left:625px;background-color: aquamarine;width:100px;align-items: center;">My Introduction</button>
+        <p class="hide" id="intros">
             I recently graduated from my high school. In the Near Future, I will pursue my study for Diploma in Software Engineering. Hello! I'm [Your Name], a passionate [Your Profession or Field]. With a background in [Brief Mention of Relevant Background], I bring [Specific Skills or Qualities] to every endeavor. My journey has been driven by a deep curiosity for [Interest or Focus Area], where I strive to [Achievement or Goal]. I thrive in collaborative environments, leveraging my [Key Strengths] to tackle challenges and drive innovation. Outside of work, I enjoy [Personal Interest or Hobby], finding inspiration in [Source of Inspiration]. I look forward to connecting, learning, and contributing to meaningful projects that make a positive impact.
         </p>
-        <h3>Studies</h3>
+        </div>
+
+        <div id="studies">
+        <hr>
+        <h2>Studies</h2>
         <nav>
             <ol>
                 <li><a class="links" href="https://www.python.org/">Python</a></li>
@@ -37,19 +54,26 @@
                 <li><a class="links" href="https://www.linux.org/">Linux</a></li>
             </ol>
         </nav>
-        <h3>Education</h3>
-        <ul>
-            <li>SJK(C)SinYa</li>
-            <li>SM Chung Ling Persendirian</li>
-        </ul>
-    </div>
+        </div>
 
+        <div id="education">
+            <hr>
+            <h2>Education</h2>
+            <div class="educontent" >
+                <ul>
+                    <li id="sinya.jpeg" onmouseover="changeimg(this.id)" onmouseleave="changeimg('whiteimage.jpg')">SJK(C)SinYa</li>
+                    <li id="chunglingprivate.jpg" onmouseover="changeimg(this.id)" onmouseleave="changeimg('whiteimage.jpg')">SM Chung Ling Persendirian</li>
+                </ul>
+                <img id="edu" src="whiteimage.jpg">
+            </div>
+        </div>
     <div id="achievements">
         <hr>
         <h2>My Achievements</h2>
-        <h4>Google Cybersecurity Certificate</h4> 
-        <h5>Completion Date: <div id="bold">3 June 2024</div></h5>
-        <p class="achievementdesc"><a href="Google Cybersecurity Certificate.jpg" alt="Google Cybersecurity Certificate"><img src="Google Cybersecurity Certificate.jpg" style="width:30%;float:right;"></a>Prepare for a new career in the high-growth field of cybersecurity, no degree or experience required. Get professional training designed and delivered by subject matter experts at Google and have the opportunity to connect with top employers.
+        <h3>Google Cybersecurity Certificate</h3> 
+        <h4>Completion Date: <span class="bold">3 June 2024</span></h4>
+        <figure><p class="achievementdesc"><a href="Google%20Cybersecurity%20Certificate.jpg" data-lightbox="images" data-title="Google Cybersecurity Certificate"><img src="Google%20Cybersecurity%20Certificate.jpg" alt="Google Cybersecurity Certificate" style="width:30%;float:right;margin-left:5%;margin-bottom: 10%;"></a>
+        Prepare for a new career in the high-growth field of cybersecurity, no degree or experience required. Get professional training designed and delivered by subject matter experts at Google and have the opportunity to connect with top employers.
 
             Organizations must continuously protect themselves and the people they serve from cyber-related threats, like fraud and phishing. They rely on cybersecurity to maintain the confidentiality, integrity, and availability of their internal systems and information. Cybersecurity analysts use a collection of methods and technologies to safeguard against threats and unauthorized access — and to create and implement solutions should a threat get through.
             
@@ -66,15 +90,15 @@
             Skills you’ll gain will include: Python, Linux, SQL, Security Information and Event Management (SIEM) tools, Intrusion Detection Systems (IDS), communication, collaboration, analysis, problem solving and more! 
             
             Additionally, each course includes portfolio activities through which you’ll showcase examples of cybersecurity skills that you can share with potential employers. Acquire concrete skills that top employers are hiring for right now.
+        </p></figure>
+        <h3>Python For Everybody Certificate</h3>
+        <h4>Completion Date: <span class="bold">18 June 2024</span></h4>
+        <figure><p class="achievementdesc"><a href="Python%20For%20Everybody%20Certificate.jpg" data-lightbox="images" data-title="Python For Everybody Certificate"><img src="Python%20For%20Everybody%20Certificate.jpg" alt="Python For Everybody Certificate" style="width:30%;float:right;margin-left:5%;margin-bottom: 3%;"></a>This Specialization builds on the success of the Python for Everybody course and will introduce fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. In the Capstone Project, you’ll use the technologies learned throughout the Specialization to design and create your own  applications for data retrieval, processing, and visualization.
+        </p></figure>
 
-        <h4>Python For Everybody Certificate</h4>
-        <h5>Completion Date: <div id="bold">18 June 2024</div></h5>
-        <p class="achievementdesc"><a href="Python For Everybody Certificate.jpg" alt="Python For Everybody Certificate"><img src="Python For Everybody Certificate.jpg" style="width:30%;float:right;"></a>This Specialization builds on the success of the Python for Everybody course and will introduce fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. In the Capstone Project, you’ll use the technologies learned throughout the Specialization to design and create your own  applications for data retrieval, processing, and visualization.
-        </p>
-
-        <h4>Google IT Support Certificate</h4>
-        <h5>Completion Date: <div id="bold">4 July 2024</div></h5>
-        <p class="achievementdesc"><a href="Google IT Support Certificate.jpg" alt="Google IT Support Certificate"><img src="Google IT Support Certificate.jpg" style="width:30%;float:right;;"></a>This program includes over 100 hours of instruction and hundreds of practice-based assessments, which will help you simulate real-world IT support scenarios that are critical for success in the workplace.
+        <h3>Google IT Support Certificate</h3>
+        <h4>Completion Date: <span class="bold">4 July 2024</span></h4>
+        <figure><p class="achievementdesc"><a href="Google%20IT%20Support%20Certificate.jpg" data-lightbox="images" data-title="Google IT Support Certificate"><img src="Google%20IT%20Support%20Certificate.jpg" alt="Google IT Support Certificate" style="width:30%;float:right;margin-left:5%;margin-bottom: 5%;"></a>This program includes over 100 hours of instruction and hundreds of practice-based assessments, which will help you simulate real-world IT support scenarios that are critical for success in the workplace.
 
             The content is highly interactive and exclusively developed by Google employees with decades of experience in IT.
             
@@ -82,7 +106,7 @@
             
             Your skills will include: Network protocols, cloud computing, Windows operating system, Linux command line, systems administration, encryption algorithms and techniques, and more. 
             
-            Learn concrete skills that top employers are hiring for right now.</p>
+            Learn concrete skills that top employers are hiring for right now.</p></figure>
         
     </div>
 
@@ -95,7 +119,9 @@
             <a href="mailto:yeohjehherne@gmail.com?subject=Contact%20From%20Website&body=Hi!">Email Me</a>
         </div>
     </footer>
-<button ><a class="links" href="#header" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Back to Top</a></button>
-    
+<button class="links" onclick="window.location.href='#start';" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Back to Top</button>
+<div id="displaydate">
+    <p>Current Date: <script>displaydate()</script></p>
+</div>
 </body>
 </html>

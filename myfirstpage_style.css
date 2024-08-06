@@ -1,7 +1,10 @@
 body{
-    background: linear-gradient(to bottom,#EFB924,#BBF912);
+    background-image: linear-gradient(to bottom,rgb(173, 173, 64), rgb(35, 211, 35));
+    background-image: url("backgroundpic.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-h1{
+h2{
     color:black;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 230%;
@@ -12,7 +15,7 @@ span{
     color:yellow
 }
 h4{
-    color:#5A7316;
+    color:#c5e07a;
     font-family:sans-serif;
 }
 #header{
@@ -21,20 +24,18 @@ h4{
 #contact{
     text-align: center;
 }
-#bold{
+h4 .bold{
     font-weight: bold;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: inline;
 }
 .achievementdesc{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display:inline-block
 }
 .intro{
-    display: grid;
-    grid-template-columns: 80%;
-    grid-template-rows: 10% 15% 12%;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 .links:hover{
     color:black;
@@ -42,7 +43,7 @@ h4{
 }
 .links:visited{
     color:purple;
-    border:2px;
+    border:solid black 2px;
 }
 dl{
     list-style-type: upper-alpha;
@@ -54,5 +55,71 @@ nav .links{
 ol{
     display:flex;
     justify-content:space-between;
+}
+.achievements{
+    display: flex;
+    align-items: center;
+}
+img{
+    border: 3px solid black;
+}
+.intro .navigate{
+    display:flex;
+    justify-content:space-evenly;
+}
+.start a{
+    height:30px;
+    text-align: center;
+    position: relative;
+    top:15px;
+    color:white;
+    border: gray dotted 2px;
+    border-radius: 20% ;
+    padding: 10px;
+    margin:10px;
+    transition-property:all;
+    transition-delay: .25s;
+    transition-duration: .5s;
+    transition-timing-function: linear;
+}
+.start a:hover{
+    border: yellow solid 2px;
+    color:green;
+    background-color: aqua;
+    text-align: center;
+    transform:scale(1.2,1)
+}
+.introduction:hover{
+    border:solid black 3px
+}
+.reveal{
+    display:block
+}
+.hide{
+    display:none
+}
+.educontent{
+    display:grid;
+    grid-template-columns: 20% 50%;
+}
+#edu{
+    width:200px;
+    height:150px
+}
+.start{
+    display: grid;
+    grid-template-columns: 10% 30% 10% 10% 10% 10% 20%;
+    background-color: black;
+}
+.start img{
+    width:100px
+}
+.start h1{
+    color:white
+}
+#quote{
+    position: relative;
+    top:15px;
+    color:white
 }
 
